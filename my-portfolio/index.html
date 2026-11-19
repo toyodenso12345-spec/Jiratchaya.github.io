@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ohm| Web Developer – สมัครงาน</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bs-body-font-family: 'IBM Plex Sans Thai', 'Noto Sans Thai', Tahoma, sans-serif;
+      --bs-body-bg: #f6f7f9;
+      --bs-body-color: #1c2331;
+      --ink: #1c2331;
+      --steel: #33507a;
+      --line: #d9dee7;
+      --signal: #e8590c;
+      --paper: #ffffff;
+    }
+
+    body {
+      line-height: 1.75
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      letter-spacing: -.01em
+    }
+
+    section {
+      padding: 5rem 0
+    }
+
+    .nav-link {
+      color: var(--ink) !important;
+      font-weight: 500
+    }
+
+    .nav-link:hover {
+      color: var(--signal) !important
+    }
+
+    .navbar {
+      background: rgba(246, 247, 249, .92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .brand-dot {
+      display: inline-block;
+      width: .6rem;
+      height: .6rem;
+      background: var(--signal);
+      border-radius: 50%;
+      margin-right: .5rem
+    }
+
+    .hero {
+      padding: 6.5rem 0 4.5rem
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 4.6rem);
+      font-weight: 700;
+      line-height: 1.1
+    }
+
+    .hero .lead {
+      max-width: 34rem;
+      color: #45506a
+    }
+
+    .btn-signal {
+      background: var(--signal);
+      border-color: var(--signal);
+      color: #fff;
+      font-weight: 600
+    }
+
+    .btn-signal:hover {
+      background: #c94a07;
+      border-color: #c94a07;
+      color: #fff
+    }
+
+    .btn-ink {
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .btn-ink:hover {
+      background: var(--ink);
+      color: #fff
+    }
+
+    .board {
+      background: var(--ink);
+      color: #e9edf5;
+      border-radius: .5rem;
+      padding: 1.5rem;
+      box-shadow: 0 18px 40px -22px rgba(28, 35, 49, .7)
+    }
+
+    .board h2 {
+      font-size: .95rem;
+      font-weight: 500;
+      color: #9fb0cc;
+      margin-bottom: 1rem
+    }
+
+    .board li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .7rem 0;
+      border-top: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .board li:first-child {
+      border-top: 0
+    }
+
+    .board .ok {
+      color: #b1f3f5;
+      font-size: .9rem;
+      white-space: nowrap
+    }
+
+    .sec-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      border-left: 5px solid var(--signal)
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: .4rem;
+      padding: 1.5rem;
+      height: 100%
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      font-weight: 600
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8edf5;
+      color: var(--steel);
+      border-radius: .25rem;
+      padding: .15rem .65rem;
+      margin: .15rem .2rem .15rem 0;
+      font-size: .88rem;
+      font-weight: 500
+    }
+
+    .skill .progress {
+      height: .5rem;
+      background: #e3e7ee
+    }
+
+    .skill .progress-bar {
+      background: var(--steel)
+    }
+
+    .timeline {
+      border-left: 2px solid var(--line);
+      margin-left: .4rem
+    }
+
+    .timeline .item {
+      position: relative;
+      padding: 0 0 2rem 1.75rem
+    }
+
+    .timeline .item::before {
+      content: "";
+      position: absolute;
+      left: -.45rem;
+      top: .55rem;
+      width: .8rem;
+      height: .8rem;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 3px solid var(--steel)
+    }
+
+    .timeline .when {
+      color: var(--signal);
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    footer {
+      background: var(--ink);
+      color: #c8d1e2
+    }
+
+    footer a {
+      color: #fff
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--signal);
+      outline-offset: 2px
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 4.5rem
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+    }
+  </style>
+
+</head>
+
+<body><!-- เนื้อหาทั้งหมด การใช้class ต่างๆ การสร้าง Grid หรือcomponent ต่างๆ ยุในสลไน์ เลย  -->
+
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#top"><span class="brand-dot"></span>Amonthep Yimdee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu"
+        aria-expanded="false" aria-label="เปิดเมนู">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">เกี่ยวกับฉัน</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">ทักษะ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">ผลงาน</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">ประสบการณ์</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <p class="text-secondary mb-2">สวัสดีครับ ผมชื่อ</p>
+          <h1 class="mb-3">Ohmmie</h1>
+          <p class="fs-4 fw-semibold mb-3">นักพัฒนาเว็บแอปพลิเคชัน (PHP &amp;Mysql Server)</p>
+          <p class="lead mb-4"> ระบุรายละเอียดเพิ่มเพิ่มเหมือนเป้น การเกริ่นนำเฉยๆ </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#contact" class="btn btn-signal btn-lg px-4">ติดต่อผม</a>
+            <a href="#projects" class="btn btn-ink btn-lg px-4">ดูผลงาน</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="board" aria-label="ตัวอย่างระบบที่พัฒนา">
+            <h2>ระบบที่ผมพัฒนา</h2>
+            <ul class="list-unstyled mb-0">
+              <li><span>ระบบขอเอกสาร (Document Request)</span><span class="ok">● ใช้งานจริง</span></li>
+              <li><span>ระบบจอง/อนุมัติอุปกรณ์</span><span class="ok">● ใช้งานจริง</span></li>
+              <li><span>ระบบติดตามทรัพย์สิน (Asset)</span><span class="ok">● ใช้งานจริง</span></li>
+              <li><span>สแกน QR บนแท็บเล็ต/PDA</span><span class="ok">● ใช้งานจริง</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="sec-title">เกี่ยวกับฉัน</h2>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <p>ผมสนใจด้านการพัฒนาเว็บไซต์และระบบงาน ชอบเรียนรู้สิ่งใหม่ ๆ และสนุกกับการได้ลองลงมือทำจริง
+            ที่ผ่านมาได้เรียนรู้การเขียนเว็บไซต์ผ่านโปรเจกต์ต่าง ๆ ทั้งงานเดี่ยวและงานกลุ่ม รวมถึงมีโอกาสทำงานด้าน QA
+            Testing ในช่วงสหกิจศึกษา ทำให้ได้เรียนรู้กระบวนการทดสอบระบบ การตรวจสอบข้อผิดพลาด และการทำงานร่วมกับผู้อื่น
+          </p>
+          <p>ตอนนี้กำลังพัฒนาทักษะด้าน HTML, CSS, JavaScript, PHP และ SQL Server
+            โดยตั้งใจอยากนำความรู้ที่มีไปต่อยอดในการทำงานจริง และพัฒนาตัวเองให้เก่งขึ้นในสายงาน IT</p>
+          <p class="text-secondary mb-0">[แก้ไขข้อความนี้ให้ตรงกับเป้าหมายอาชีพ ตำแหน่งที่สนใจ]</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="panel">
+            <h3 class="mb-3">ข้อมูลโดยย่อ</h3>
+            <dl class="row mb-0">
+              <dt class="col-5 fw-medium">ตำแหน่งที่สนใจ</dt>
+              <dd class="col-7">Web Developer / Full-stack</dd>
+              <dt class="col-5 fw-medium">ที่อยู่:บุยายใบชิดตี้</dt>
+              <dd class="col-7">[จังหวัด/เขต]</dd>
+              <dt class="col-5 fw-medium">การศึกษา</dt>
+              <dd class="col-7">[สาขา / มหาวิทยาลัย]</dd>
+              <dt class="col-5 fw-medium">พร้อมเริ่มงาน</dt>
+              <dd class="col-7 mb-0">[ระบุวันที่]</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="bg-white border-top border-bottom">
+    <div class="container">
+      <h2 class="sec-title">ทักษะ</h2>
+      <div class="row g-5">
+        <div class="col-lg-6 skill">
+          <h3 class="h5 mb-4">ทักษะหลัก</h3>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><span>PHP</span><span>90%</span></div>
+            <div class="progress" role="progressbar" aria-label="PHP" aria-valuenow="90" aria-valuemin="0"
+              aria-valuemax="100">
+              <div class="progress-bar" style="width:90%"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><span>SQL Server (T-SQL)</span><span>85%</span></div>
+            <div class="progress" role="progressbar" aria-label="SQL Server" aria-valuenow="85" aria-valuemin="0"
+              aria-valuemax="100">
+              <div class="progress-bar" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><span>HTML / CSS / Bootstrap5</span><span>85%</span></div>
+            <div class="progress" role="progressbar" aria-label="HTML CSS Bootstrap" aria-valuenow="85"
+              aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="mb-0">
+            <div class="d-flex justify-content-between"><span>JavaScript</span><span>75%</span></div>
+            <div class="progress" role="progressbar" aria-label="JavaScript" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100">
+              <div class="progress-bar" style="width:75%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="h5 mb-3">เครื่องมือและความถนัด</h3>
+          <p class="mb-2">
+            <span class="tag">XAMPP</span><span class="tag">sqlsrv</span><span class="tag">cypress</span><span
+              class="tag">Power App</span><span class="tag">QR Code</span><span
+              class="tag">ระบุลงไปว่าใช้อะไรเป็นบ้าง</span>
+          </p>
+          <h3 class="h5 mt-4 mb-3">ทักษะการทำงาน</h3>
+          <p class="mb-0">
+            <span class="tag">วิเคราะห์ความต้องการผู้ใช้</span><span class="tag">ออกแบบฐานข้อมูล</span><span
+              class="tag">ออกแบบขั้นตอนอนุมัติ</span><span class="tag">แก้ปัญหาเฉพาะหน้า</span><span
+              class="tag">สื่อสารกับหน้างาน</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="sec-title">ผลงาน</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <!--ในDiv ให้ระบุโปรเจคที่เคยทำจะตอนเรียนก้ได้ พร้อมระบุว่าในภาษาหรือเครืองมืออะไรให้การสร้าง-->
+          <div class="panel">
+            <h3>ระบบขอเอกสาร</h3>
+            <p class="small text-secondary">Document Request</p>
+            <p>รับคำขอเอกสารออนไลน์ ย้ายโครงสร้างข้อมูลไป SQL Server และพิมพ์ฟอร์มได้ตรงตามรูปแบบเดิมขององค์กร</p>
+            <span class="tag">PHP</span><span class="tag">phpmyadmin mysql oracle</span>
+            <!-- ภาษา พร้อมฐานข้อมูลที่เก้บ-->
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="panel">
+            <h3>ระบบจองและอนุมัติ</h3>
+            <p class="small text-secondary">PC OutRequest</p>
+            <p>จองอุปกรณ์พร้อมลำดับอนุมัติตามบทบาทผู้ใช้ รองรับ QR และการพิมพ์ใบอนุมัติ</p>
+            <span class="tag">Roles</span><span class="tag">QR</span><span class="tag">Print</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="panel">
+            <h3>ระบบติดตามทรัพย์สิน</h3>
+            <p class="small text-secondary">Asset Management</p>
+            <p>แสดงข้อมูลทรัพย์สินเป็นการ์ดอ่านง่าย มี Tooltip รายละเอียด และสไตล์สำหรับพิมพ์รายงาน</p>
+            <span class="tag">Bootstrap</span><span class="tag">Print CSS</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="panel">
+            <h3>สแกน QR ออฟไลน์</h3>
+            <p class="small text-secondary">Scan Offline</p>
+            <p>หน้าสแกนสำหรับแท็บเล็ตและ PDA ในโรงงาน ใช้งานได้แม้สัญญาณไม่เสถียร</p>
+            <span class="tag">JavaScript</span><span class="tag">PDA</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-secondary mt-3 mb-0 small">ระบบทั้งหมดใช้งานบนเครือข่ายภายในองค์กร จึงไม่มีลิงก์ทดลองใช้
+        [เพิ่มภาพหน้าจอได้ตามต้องการ]</p>
+    </div>
+  </section>
+
+  <section id="experience" class="bg-white border-top border-bottom">
+    <div class="container">
+      <h2 class="sec-title">ประสบการณ์</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="when">[ปีที่เริ่ม] – ปัจจุบัน</div>
+          <h3 class="h5 mb-1">Web Developer (ระบบภายในองค์กร)</h3>
+          <p class="text-secondary mb-2">[ชื่อบริษัท] · อุตสาหกรรมการผลิต</p>
+          <ul class="mb-0">
+            <li>พัฒนาและดูแลเว็บแอปด้วย PHP บนเซิร์ฟเวอร์ภายใน เชื่อมต่อ SQL Server</li>
+            <li>ออกแบบขั้นตอนอนุมัติ การพิมพ์เอกสาร และการสแกน QR ให้เหมาะกับหน้างาน</li>
+            <li>[เพิ่มผลลัพธ์ที่วัดได้ เช่น ลดเวลาอนุมัติลง X%]</li>
+          </ul>
+        </div>
+        <div class="item pb-0">
+          <div class="when">[ปี] – [ปี]</div>
+          <h3 class="h5 mb-1">[ตำแหน่ง / การศึกษา]</h3>
+          <p class="text-secondary mb-0">[สถานที่ทำงานหรือสถาบัน]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-7">
+          <h2 class="h3 text-white mb-2">สนใจร่วมงานกัน?</h2>
+          <p class="mb-0">ยินดีส่งเรซูเม่และพูดคุยรายละเอียดเพิ่มเติม ติดต่อได้ตามช่องทางด้านล่าง</p>
+        </div>
+        <div class="col-md-5">
+          <ul class="list-unstyled mb-0">
+            <li>
+              อีเมล:
+              <a href="mailto:ohmmie12001@gmail.com">
+                ohmmie12001@gmail.com
+              </a>
+            </li>
+            <li>โทร: <a href="tel:+66000000000">0X-XXXX-XXXX</a></li>
+            <li>LINE: [LINE ID]</li>
+            <li>Facebook /: <a href="#contact">[ลิงก์โปรไฟล์]</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <p class="small mb-0">© Ohmmie · พอร์ตโฟลิโอสมัครงาน</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
